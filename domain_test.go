@@ -1,6 +1,7 @@
 package domain_test
 
 import (
+	"fmt"
 	"github.com/nshah/go.domain"
 	"testing"
 )
@@ -99,4 +100,38 @@ func TestInvalid(t *testing.T) {
 				d, actual)
 		}
 	}
+}
+
+func ExampleRegistered() {
+	var registered string
+
+	registered, _ = domain.Registered("www.facebook.com")
+	fmt.Println(registered)
+
+	registered, _ = domain.Registered("apps.facebook.com")
+	fmt.Println(registered)
+
+	registered, err := domain.Registered("com")
+	fmt.Println(err)
+	// Output:
+	// facebook.com
+	// facebook.com
+	// Invalid domain structure: com
+}
+
+func ExampleTLD() {
+	var tld string
+
+	tld, _ = domain.TLD("www.facebook.com")
+	fmt.Println(tld)
+
+	tld, _ = domain.TLD("apps.facebook.com")
+	fmt.Println(tld)
+
+	tld, err := domain.TLD("com")
+	fmt.Println(err)
+	// Output:
+	// com
+	// com
+	// Invalid domain structure: com
 }
