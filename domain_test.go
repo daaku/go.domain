@@ -2,7 +2,7 @@ package domain_test
 
 import (
 	"fmt"
-	"github.com/nshah/go.domain"
+	"github.com/daaku/go.domain"
 	"testing"
 )
 
