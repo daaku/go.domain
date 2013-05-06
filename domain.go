@@ -64,11 +64,13 @@ func find(parts []string, current tld) string {
 	if next == nil {
 		return part
 	}
-	rest := find(parts[:partsLen-1], next)
-	if rest == popChar {
-		return part
-	} else if len(rest) > 0 {
-		return rest + "." + part
+	if partsLen > 0 {
+		rest := find(parts[:partsLen-1], next)
+		if rest == popChar {
+			return part
+		} else if len(rest) > 0 {
+			return rest + "." + part
+		}
 	}
 	return ""
 }
