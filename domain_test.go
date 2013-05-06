@@ -60,6 +60,7 @@ var invalidDomains = []string{
 	"invalid-fqdn",
 	"org",
 	"academy.museum",
+	"tokyo.jp",
 }
 
 func TestValidRegistered(t *testing.T) {
