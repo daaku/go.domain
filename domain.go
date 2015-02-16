@@ -1,5 +1,7 @@
 // Package domain allows for extracting the TLD.
 //
+// **DO NOT USE**: You should use https://godoc.org/golang.org/x/net/publicsuffix instead.
+//
 // This is adapted from the PHP source at:
 //   http://www.dkim-reputation.org/regdom-libs/
 package domain
